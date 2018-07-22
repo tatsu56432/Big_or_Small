@@ -4,7 +4,7 @@ package Big_or_Small;
 
 public class Point implements Game{
 	
-	int point;
+	int pointAmount;
 	int totalPoint;
 	
 	public Point() {
@@ -16,6 +16,16 @@ public class Point implements Game{
 	public void display() {
 		// TODO Auto-generated method stub
 		System.out.println(this.totalPoint);
+	}
+	
+	public int decreaseOrIncreasePoint(int duelResult) {
+		
+	if(duelResult == 1) {
+		this.totalPoint += 10;
+	}else {
+		this.totalPoint -= 10;
+	}
+		return totalPoint;
 	}
 
 

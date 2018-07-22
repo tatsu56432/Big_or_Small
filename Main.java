@@ -7,19 +7,29 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 //		Cards c = new Cards();
-//		c.display();		
+//		c.display();
 		
+		Point p = new Point();
+		Chip c = new Chip();
 		TrampCards t = new TrampCards();
-		t.shuffle();
+		
 		
 		for(int i=0;i<52;i++) {
 			System.out.println(t.cardsDeck.get(i));	
 		}
 		
+		System.out.print("＊＊＊＊＊チップ枚数とカード＊＊＊＊＊＊＊");
+		p.display();
+		c.display();
+		System.out.println("現在のカード:" + t.cardsDeck.get(0));
+		System.out.print("＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊");
 		
+		System.out.print("BET枚数選択");
+		System.out.print("BETするchip数を入力してください。(最大1〜20)");
+		
+		t.shuffle();
 		int result;
 		result = t.numDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
-		
 		if(result == 2) {
 			result = t.markDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
 			if(result == 1) {
