@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Main {
 
+	private static Scanner scanner;
+
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
@@ -29,17 +31,14 @@ public class Main {
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊");
 		
 		System.out.println("BET枚数選択");
-		
 		System.out.println("BETするchip数を入力してください。(最大1〜20)");
-		
-        
-        try{
-        	Scanner scanner = new Scanner(System.in);
-            int num = scanner.nextInt();
-            System.out.println("数値は: "+ num); 
-          }catch (InputMismatchException e){
-            System.out.println("数値でありません：" + e);
-          }
+
+		try {
+		int ca = MyScanner.ChipScanner();
+		System.out.println(ca);
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
         
         
 		
