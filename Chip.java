@@ -27,10 +27,8 @@ public class Chip implements Game{
 	@Override
 	public void display() {
 		// TODO Auto-generated method stub
-		System.out.println(this.chip_10);
+		System.out.println("現在[10点チップ]" + this.chip_10 + "枚保有、[1点チップ]" + this.chip_1 + "枚保有しています");
 	}
-
-	
 	
 	@Override
 	public boolean decide() {

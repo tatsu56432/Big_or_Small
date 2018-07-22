@@ -21,13 +21,6 @@ public class TrampCards{
 		Collections.shuffle(cardsDeck);	
 	}
 	
-	//デッキ
-	public void showCardsDeck() {
-		
-//		System.out.println(this.cardsDeck);
-		
-	}
-	
 	public int numDuel(Cards c1, Cards c2) {
 		
 		int result = 0;
@@ -49,8 +42,7 @@ public class TrampCards{
 		
 		String mark1 = c1.getMark();
 		String mark2 = c2.getMark();
-//		int mark1Weighting = 0;
-//		int mark2Weighting = 0;
+//		
 		int markNum1 = 0;
 		int markNum2 = 0;
 		

@@ -1,5 +1,8 @@
 package Big_or_Small;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,56 +15,50 @@ public class Main {
 		Point p = new Point();
 		Chip c = new Chip();
 		TrampCards t = new TrampCards();
+		BigOrSmall b = new BigOrSmall();
 		
 		
 		for(int i=0;i<52;i++) {
 			System.out.println(t.cardsDeck.get(i));	
 		}
 		
-		System.out.print("＊＊＊＊＊チップ枚数とカード＊＊＊＊＊＊＊");
+		System.out.println("＊＊＊＊＊チップ枚数とカード＊＊＊＊＊＊＊");
 		p.display();
 		c.display();
 		System.out.println("現在のカード:" + t.cardsDeck.get(0));
-		System.out.print("＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊");
+		System.out.println("＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊");
 		
-		System.out.print("BET枚数選択");
-		System.out.print("BETするchip数を入力してください。(最大1〜20)");
+		System.out.println("BET枚数選択");
 		
-		t.shuffle();
-		int result;
-		result = t.numDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
-		if(result == 2) {
-			result = t.markDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
-			if(result == 1) {
-				System.out.println("勝ち");	
-			}else {
-				System.out.println("負け");	
-			}
-		}else if(result == 1){
-			System.out.println("勝ち");
-		}else {
-			System.out.println("負け");
-		}
+		System.out.println("BETするchip数を入力してください。(最大1〜20)");
 		
+        
+        try{
+        	Scanner scanner = new Scanner(System.in);
+            int num = scanner.nextInt();
+            System.out.println("数値は: "+ num); 
+          }catch (InputMismatchException e){
+            System.out.println("数値でありません：" + e);
+          }
+        
+        
 		
-		
-		
-		
-		
-//		for(int i=0; i<Deck.size(); i++) {
-//			result = Deck.get(i);		
-//		}
-		
-		
-//		int[] card_num = c.getCard_num();
+//		t.shuffle();
+//		int result;
+//		result = t.numDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
 //		
-//		for (int num : card_num) {
-//		    System.out.println(num);
-//		}
-		
-//		int i;
-//		for(i=0;i< card_num.length; i++) {
-//			System.out.println(card_num[i]);
+//		
+//		if(result == 2) {
+//			result = t.markDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
+//			if(result == 1) {
+//				System.out.println("勝ち");	
+//			}else {
+//				System.out.println("負け");	
+//			}
+//		}else if(result == 1){
+//			System.out.println("勝ち");
+//		}else {
+//			System.out.println("負け");
 //		}
 		
 	}
