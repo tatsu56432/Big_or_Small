@@ -9,10 +9,12 @@ public class BigOrSmall{
 	
 	public int startBigOrSmall(String myHand) {
 		
-		int result;
+		int result = 0;
 		
 		
-//		return result;
+		
+		
+		return result;
 	}
 	
 	

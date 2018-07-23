@@ -10,7 +10,10 @@ public class Point implements Game{
 	public Point() {
 		this.totalPoint = 100;	
 	}
-
+	
+	public int getTotalPoint() {
+		return totalPoint;
+	}
 
 	@Override
 	public void display() {
