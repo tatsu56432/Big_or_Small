@@ -20,7 +20,7 @@ public class MyScanner {
 		Scanner scanner;	
         scanner = new Scanner(System.in);
         num = Integer.parseInt(scanner.nextLine());
-        if(num > 20 || num <= 1) {
+        if(num > 20 || num < 1) {
         	throw new IllegalArgumentException("BETできる枚数は1枚から20枚までです。");
         	//errMassage = "BETできる枚数は1枚から20枚までです。";
         }
