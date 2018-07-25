@@ -35,7 +35,7 @@ public class TrampCards{
 		return result;
 	}
 	
-	
+	//
 	public int markDuel(Cards c1,Cards c2) {
 		
 		int result = 0;
