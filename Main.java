@@ -19,91 +19,85 @@ public class Main {
 		TrampCards t = new TrampCards();
 		BigOrSmall b = new BigOrSmall();
 
-		
-		
-
 		t.shuffle();
 		for (int i = 0; i < 52; i++) {
-        System.out.println(t.cardsDeck.get(i));
-//			t.cardsDeck.get(i);
+			System.out.println(t.cardsDeck.get(i));
+			// t.cardsDeck.get(i);
 		}
 
-		
-		
-		
 		System.out.println("＊＊＊＊＊チップ枚数とカード＊＊＊＊＊＊＊");
-		
+
 		p.display();
 		c.display();
-		
-		
-		
-		boolean flag_continue = true; 
-		while(flag_continue) {
+
+		boolean flag_continue = true;
+		while (flag_continue) {
 			Cards previous = t.cardsDeck.get(deal_num);
 			System.out.println("現在のカード:" + previous);
 			System.out.println("＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊");
 			System.out.println("BET枚数選択");
 			System.out.println("BETするchip数を入力してください。(最大1〜20)");
 			System.out.println("現在の総計は" + c.getTotalChip() + "です");
-	
+
 			boolean flag = false;
-			try {
-				int num = MyScanner.ChipLimitSizeScanner();
-				System.out.println(num + "枚BET！！");
+
+			while (!flag) {
 				try {
+					int num = MyScanner.ChipLimitSizeScanner();
+					System.out.println(num + "枚BET！！");
 					c.betChip(num);
 					System.out.println("現在のチップ数は" + c.getTotalChip() + "です");
-					//ここまできたらflagをtrueに
-					 flag = true;
+					// ここまできたらflagをtrueに
+					flag = true;
+				} catch (NumberFormatException e) {
+					System.out.println("正の整数で入力してください。");
+				} catch (IllegalArgumentException e) {
+					System.out.println(e.getMessage());
+					// e.printStackTrace();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} catch (IllegalArgumentException e) {
-				System.out.println(e.getMessage());
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-	
-			
-			//flagがtrueなら勝負開始
-			if(flag) {				
-			    Cards next = t.cardsDeck.get(++deal_num);
-				int result;
-	            System.out.println(next);
-				result = t.numDuel(previous, next);
-				if (result == 2) {
-					
-					result = t.markDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
-					if (result == 1) {
-						System.out.println("勝ち");	
-					} else {
-						System.out.println("負け");
-					}
-				} else if (result == 1) {
+
+			// flagがtrueなら勝負開始
+
+			Cards next = t.cardsDeck.get(++deal_num);
+			int result;
+			System.out.println(next);
+			result = t.numDuel(previous, next);
+			if (result == 2) {
+				result = t.markDuel(t.cardsDeck.get(0), t.cardsDeck.get(1));
+				if (result == 1) {
 					System.out.println("勝ち");
-					
-				} else 	{
+					System.out.println(c);
+				} else {
 					System.out.println("負け");
-				}	
-			}//勝負終了
-			
-			//ゲーム52回したら抜ける
-			if(deal_num > 52) {
+					System.out.println(c);
+				}
+			} else if (result == 1) {
+				System.out.println("勝ち");
+				System.out.println(c);
+			} else {
+				System.out.println("負け");
+				System.out.println(c);
+			}
+
+			// ゲーム52回したら抜ける
+			if (deal_num > 2) {
 				flag_continue = false;
 				t.shuffle();
-				//どこでユーザは続けるかどうか判断する？
-				//game続行するかのscannerを作成するってことですか？
+				// どこでユーザは続けるかどうか判断する？
+				// game続行するかのscannerを作成するってことですか？
 				//
-				//コインが少ない場合？
-				//scannerが判定してます
-				//できてないです
-				//戻す処理のやり方、わからない
-//				if() {
-                //ありがとうございますー！！！！１！！！
-//				//ここでゲーム抜ける	
-//				}
+				// コインが少ない場合？
+				// scannerが判定してます
+				// できてないです
+				// 戻す処理のやり方、わからない
+				// if() {
+				// ありがとうございますー！！！！１！！！
+				// //ここでゲーム抜ける
+				// }
 			}
-		}//while loop ここまで
+		} // while loop ここまで
 	}
 }

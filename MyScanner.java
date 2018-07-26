@@ -28,6 +28,8 @@ public class MyScanner {
 	}
 	
 	
+	
+	
 //	public static String ChipLimitPointScanner(int totalPoint) throws Exception{
 //		String errMassage = "";
 //		int num;

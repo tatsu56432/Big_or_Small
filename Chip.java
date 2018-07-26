@@ -34,12 +34,25 @@ public class Chip implements Game{
 		
 		if(this.totalChip < chipNum) {
 			throw new Exception("チップ枚数が足りません！");
-		}
-		
+		}		
 		this.totalChip -= chipNum;
-		
 	}
 	
+	//勝った時chipを増やす
+	public int increaseChip(int duelResult,int inputChip) {
+		if(duelResult ==  1) {
+			this.totalChip += 10;
+		}	
+		return this.totalChip;
+	}
+	
+	//負けた時chipを減らす
+	public int decreaseChip(int duelResult,int inputChip) {
+		if(duelResult ==  0) {
+			this.totalChip -= inputChip;
+		}	
+		return this.totalChip;
+	}
 	
 
 	@Override
@@ -52,6 +65,17 @@ public class Chip implements Game{
 	public boolean decide() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	@Override
+	public String toString() {
+		
+		String message = "";
+		message += "*************************¥n";
+		message += "総枚数" + this.totalChip + "";
+		message +="現在[10点チップ]" + this.chip_10 + "枚保有、[1点チップ]" + this.chip_1 + "枚保有しています¥n";
+		
+		return message;
 	}
 	
 	
