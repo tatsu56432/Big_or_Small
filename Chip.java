@@ -70,12 +70,14 @@ public class Chip implements Game{
 	@Override
 	public String toString() {
 		
+		//改行コード取得
+		String sep = System.getProperty("line.separator");
 		String message = "";
-		message += "*************************¥n";
-		message += "総枚数" + this.totalChip + "";
-		message +="現在[10点チップ]" + this.chip_10 + "枚保有、[1点チップ]" + this.chip_1 + "枚保有しています¥n";
-		
+		message += "*************************" + sep;
+		message += "総枚数" + this.totalChip + sep;
+		message +="現在[10点チップ]" + this.chip_10 + "枚保有、[1点チップ]" + this.chip_1 + "枚保有しています" + sep;	
 		return message;
+		
 	}
 	
 	
