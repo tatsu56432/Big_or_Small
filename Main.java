@@ -35,9 +35,10 @@ public class Main {
 			Cards previous = t.cardsDeck.get(deal_num);
 			System.out.println("現在のカード:" + previous);
 			System.out.println("＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊");
+			System.out.println("現在の総計は" + c.getTotalChip() + "です");
 			System.out.println("BET枚数選択");
 			System.out.println("BETするchip数を入力してください。(最大1〜20)");
-			System.out.println("現在の総計は" + c.getTotalChip() + "です");
+			
 
 			boolean flag = false;
 
@@ -59,8 +60,7 @@ public class Main {
 				}
 			}
 
-			// flagがtrueなら勝負開始
-
+			// 
 			Cards next = t.cardsDeck.get(++deal_num);
 			int result;
 			System.out.println(next);

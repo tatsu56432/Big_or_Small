@@ -4,6 +4,11 @@ public class Chip implements Game{
 	private int chip_10;
 	private int chip_1;
 	private int totalChip;
+	private int betChip;
+	
+	public int getBetChip() {
+		return this.betChip;
+	}
 	
 	public int getChip_10() {
 		return this.chip_10;
@@ -39,22 +44,27 @@ public class Chip implements Game{
 	}
 	
 	//勝った時chipを増やす
-	public int increaseChip(int duelResult,int inputChip) {
+	public void increaseChip(int duelResult,int inputChip) {
 		if(duelResult ==  1) {
 			this.totalChip += 10;
 		}	
-		return this.totalChip;
 	}
 	
 	//負けた時chipを減らす
-	public int decreaseChip(int duelResult,int inputChip) {
+	public void decreaseChip(int duelResult,int inputChip) {
 		if(duelResult ==  0) {
 			this.totalChip -= inputChip;
 		}	
-		return this.totalChip;
 	}
 	
-
+	public void judgeBetChip(int duelResult,int inputChip) {
+		if(duelResult ==  1) {
+			this.betChip = this.betChip * 2;
+		}else {
+			this.betChip -= this.betChip;
+		}
+	}
+	
 	@Override
 	public void display() {
 		// TODO Auto-generated method stub
