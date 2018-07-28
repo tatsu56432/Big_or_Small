@@ -75,8 +75,8 @@ public class Main {
 			
 			//System.out.println(bs);
 			
-			previous.setNum(1);
-			next.setNum(1);
+//			previous.setNum(1);
+//			next.setNum(1);
 			System.out.println(previous);
 			System.out.println(next);
 			
