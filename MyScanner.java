@@ -16,17 +16,37 @@ public class MyScanner {
 	
 	public static int ChipLimitSizeScanner() throws Exception{
 		
-		int num;
+		int inputNum;
 		Scanner scanner;	
         scanner = new Scanner(System.in);
-        num = Integer.parseInt(scanner.nextLine());
-        if(num > 20 || num < 1) {
+        inputNum = Integer.parseInt(scanner.nextLine());
+        if(inputNum > 20 || inputNum < 1) {
         	throw new IllegalArgumentException("BETできる枚数は1枚から20枚までです。");
         	//errMassage = "BETできる枚数は1枚から20枚までです。";
         }
-		return num;
+		return inputNum;
 	}
 	
+	public static int BigOrSmallScanner() throws Exception{
+		
+		int inputNum;
+		Scanner scanner;	
+        
+        System.out.println("[Big or Small] 0:Big: 1:Small");
+        System.out.println("BigOrSmall選択");
+        
+        scanner = new Scanner(System.in);
+        inputNum = Integer.parseInt(scanner.nextLine());
+        
+        System.out.println(inputNum);
+        
+        if(inputNum < 0 || inputNum > 1) {
+        	throw new IllegalArgumentException("範囲外の数値です"); 
+        }
+        
+        return inputNum;
+		
+	}
 	
 	
 	
